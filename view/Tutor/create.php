@@ -18,6 +18,7 @@ require_once('../../app/controller/Usuario.php');
 </head>
 <body>
 
+	<section>
 <?php
 	$usuario = new Usuario;
 	if(isset($_POST['Cadastrar']) &&
@@ -37,8 +38,11 @@ require_once('../../app/controller/Usuario.php');
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(3);
 		
-		if($usuario->insert()){
-			echo "Tutor ". $nome. " inserido com sucesso";
+		if($usuario->insert()){?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+		<?php
 		}
 	}
 	
@@ -65,8 +69,7 @@ require_once('../../app/controller/Usuario.php');
 	}
     ?>
 
-	<section>
-		<div class="container">
+<div class="container">
 			<form action="" method="POST">
 			<div class="notas">
 				<h1>Adicionar Discente:</h1>
