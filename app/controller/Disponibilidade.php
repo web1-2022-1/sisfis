@@ -34,10 +34,12 @@ class Disponibilidade extends CrudDisponibilidade{
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (dia, hora, livre) VALUES (:dia, :hora, :livre)";
+        $sql = "INSERT INTO $this->tabela (dia, horaInicial, horaFinal, idTutor, livre) VALUES (:dia, :horaInicial, :horaFinal, :idTutor, :livre)";
         $stm = DB::prepare($sql);
         $stm->bindParam(':dia', $this->dia);
-        $stm->bindParam(':hora', $this->hora);
+        $stm->bindParam(':horaInicial', $this->horaInicial);
+        $stm->bindParam(':horaFinal', $this->horaFinal);
+        $stm->bindParam(':idTutor', $this->idTutor);
         $stm->bindParam(':livre', $this->livre);
         return $stm->execute();
     }
