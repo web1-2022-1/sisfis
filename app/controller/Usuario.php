@@ -12,7 +12,7 @@ class Usuario extends CrudUsuario{
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchAll();
     }
     //busca todos os itens
     public function findAll() {
@@ -20,6 +20,16 @@ class Usuario extends CrudUsuario{
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
+    }
+    
+    //busca todos os itens
+    public function findAtual() {
+        $sql = "SELECT idUsuario FROM $this->tabela WHERE usuario = :usuario AND senha = :senha LIMIT 1";
+        $stm = DB::prepare($sql);
+        $stm->bindParam(':usuario', $this->usuario);
+        $stm->bindParam(':senha', $this->senha);
+        $stm->execute();
+        return $stm->fetch();
     }
     
     //busca senha

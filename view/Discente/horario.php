@@ -25,16 +25,11 @@ require_once('../../app/controller/Noticia.php');
 				<h2>Horários da Academia:</h2>
 				<div class="notas">
 					 <div class="semana">
-						<ul>
-							<li>Segunda: 8:30 ~ 11:00 || 13:30 ~ 18:00</li>
-							<li>Terça:       8:30 ~ 11:00 || 13:30 ~ 18:00</li>
-							<li>Quarta:     8:30 ~ 11:00 || 13:30 ~ 18:00</li>
-							<li>Quinta:     8:30 ~ 11:00 || 13:30 ~ 18:00</li>
-							<li>Sexta:       8:30 ~ 11:00 || 13:30 ~ 18:00</li>
-						</ul>
 					</div><!--semana-->
 					<div class="calendario"><!--CALENDARIOOOOOOO
-					--><h1>add calendario </h1></div><!--calendario-->
+					--><h1>add calendario </h1>
+						<img src="../../public/img/calendario.png" alt="" srcset="">
+				</div><!--calendario-->
 				</div><!--horarios-pt1-->
 				
 				<div class="horarios-pt2">
@@ -52,9 +47,7 @@ require_once('../../app/controller/Noticia.php');
 					</div><!--seletor-periodo-->
 					<div class="meus-horarios">
 						<ul>
-							<li>Segunda 17/04/2022 : 8:30 ~ 9:00 </li>
-							<li>Quarta    19/04/2022 : 9:30 ~ 10:00 </li>
-							<li>Quinta     20/04/2022 : 14:30 ~ 15:00 </li>
+						<input type="date" name="" id="">
 						</ul>
 					</div><!--meus-horarios-->
 				</div><!--horarios-pt2-->

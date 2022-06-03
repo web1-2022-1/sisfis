@@ -24,10 +24,10 @@ class Disponibilidade extends CrudDisponibilidade{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT disponibilidade FROM $this->tabela WHERE disponibilidade = :disponibilidade AND senha = :senha LIMIT 1";
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN horaInicial AND horaFinal) LIMIT 1";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':disponibilidade', $this->getNome());
-        $stm->bindParam(':senha', $this->getSenha());
+        $stm->bindParam(':date', $this->dia);
+        $stm->bindParam(':hora', $this->horaInicial);
         $stm->execute();
         return $stm->fetch();
     }
