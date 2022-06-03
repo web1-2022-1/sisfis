@@ -22,14 +22,17 @@ require_once('../../app/controller/Usuario.php');
 	$usuario = new Usuario;
 	if(isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
+		$_POST['matricula'] != '' &&
 		$_POST['senha'] != '' &&
 		$_POST['login'] != ''){
 
 		$nome = $_POST['nome'];
+		$matricula = $_POST['matricula'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
 		$usuario->setNome($nome);
+		$usuario->setNumMatricula($matricula);
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(3);

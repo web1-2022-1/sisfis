@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once('../../app/controller/Usuario.php');
+require_once('../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -20,22 +21,42 @@ require_once('../../app/controller/Usuario.php');
 
 <?php
 	$usuario = new Usuario;
+	$disponibilidade = new Disponibilidade;
+
 	if(isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
-		$_POST['login'] != ''){
+		$_POST['login'] != ''&&
+		$_POST['date'] != ''&&
+		$_POST['timeInicial'] != ''&&
+		$_POST['timeFinal'] != ''){
 
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
+
+		$dia = $_POST['date'];
+		$horaInicial = $_POST['timeInicial'];
+		$horaFinal = $_POST['timeFinal'];
+		$idTutor = 44;
+		$livre = 1;
 
 		$usuario->setNome($nome);
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
 		
-		if($usuario->insert()){
-			echo "Tutor ". $nome. " inserido com sucesso";
+		$disponibilidade->setDia($dia);
+		$disponibilidade->setHoraInicial($horaInicial);
+		$disponibilidade->setHoraFinal($horaFinal);
+		$disponibilidade->setLivre($livre);
+
+		if($usuario->insert() && $disponibilidade->insert()){
+			?>
+			<div class="model">
+				<img src="../../public/img/sucess.gif" alt="">
+			</div>
+			<?php
 		}
 	}
 	
@@ -85,8 +106,15 @@ require_once('../../app/controller/Usuario.php');
 				<h2>Selecione os horarios do instrutor:</h2>
 				<div class="add-tutor-horari">
 					<div class="select">
-						<input type="date" name="data" id="">
-					</div><!--select-->
+					<div class="select-data">
+						<p>Dia:</p>
+						<input type="date" name="date" id="">
+						<p>Hora Inicial:</p>
+						<input type="time" name="timeInicial" id="">
+						<p>Hora Final:</p>
+						<input type="time" name="timeFinal" id="">
+					</div><!--select-min-->
+				</div><!--select-->
 				<div class="botão-agendamento">
 					<input type="submit" name="Cadastrar" value="Cadastrar">
 					</div><!--botão-agendamento-->
