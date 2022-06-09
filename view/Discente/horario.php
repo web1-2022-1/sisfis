@@ -28,6 +28,9 @@ require_once('../../app/controller/Noticia.php');
 					</div><!--semana-->
 					<div class="calendario"><!--CALENDARIOOOOOOO
 					--><h1>add calendario </h1>
+					<?php
+						$usuario = new Usuario;
+					?>
 						<img src="../../public/img/calendario.png" alt="" srcset="">
 				</div><!--calendario-->
 				</div><!--horarios-pt1-->
