@@ -12,7 +12,7 @@ class Disponibilidade extends CrudDisponibilidade{
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchall();
     }
     //busca todos os itens
     public function findAll() {
