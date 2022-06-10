@@ -15,7 +15,7 @@ require_once('../../app/controller/Disponibilidade.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>AdmTela2</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela5.css">
+	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 </head>
@@ -62,16 +62,31 @@ if (isset($_POST['Agendar'])){
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
 	
 		if ($agendamento->insert()) {?>
-			<div class="modal">
-				<img src="../../public/img/sucess.gif" alt="" srcset="">
-			</div>
-		<?php }
+		<style>
+		.modal img{
+			display: block;
+			}
+		</style>
+		<?php 
+		sleep(2);
+		?>
+		<style>
+		.modal img{
+			display: block;
+			}
+		</style>
+		<?php	
+	}
 	}else{
 		echo "<br>Seleione um tutor!!!!";
 	}
 }
 
 ?>
+
+	<div class="modal">
+		<img src="../../public/img/sucess.gif" alt="" srcset="">
+	</div>
 <section>
 	<div class="container">
 		<div class="notas">
