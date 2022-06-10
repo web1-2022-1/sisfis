@@ -3,6 +3,8 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once('../../app/controller/Noticia.php');
+require_once('../../app/controller/Agendamento.php');
+require_once('../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -28,6 +30,26 @@ require_once('../../app/controller/Noticia.php');
 					</div><!--semana-->
 					<div class="calendario"><!--CALENDARIOOOOOOO
 					--><h1>add calendario </h1>
+					<?php
+						$Agendamento = new Agendamento;
+						$fkDisponibilidade = $Agendamento->findUnit(12);
+
+						/*
+						foreach ($Agendamentos as $key => $value) {?>
+							<p><?php echo "Dias : ".$value->fkDisponibilidade;?></p>
+						<?php
+						}*/
+
+						$HorarioAgendado = new Disponibilidade;
+						$HorarioAgendados = $HorarioAgendado->findUnit($fkDisponibilidade->idAgendamento);
+
+						foreach ($HorarioAgendados as $key => $value) {?>
+							<p><?php echo "Dias : ".$value->dia;?></p>
+							<p><?php echo "Horarios : ".$value->horaInicial;?></p>
+							<p><?php echo "Horarios : ".$value->horaFinal;?></p>
+						<?php
+						}
+					?>
 						<img src="../../public/img/calendario.png" alt="" srcset="">
 				</div><!--calendario-->
 				</div><!--horarios-pt1-->
