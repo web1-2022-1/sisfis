@@ -3,4 +3,10 @@
 define('USER','icaro');
 define('PASS','tatakae');
 define('BASE','IFhealth');
+
+define('HOST','localhost');
+define('USUARIO','icaro');
+define('SENHA','tatakae');
+define('DB','IFhealth');
+ global $pdo;
 ?>
