@@ -100,8 +100,3 @@ Dados de login:
 
 * Usuario: admin
 * Senha: 2222
-
-
-- [ ] Teste de Quantun
-
-abacaxi AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
