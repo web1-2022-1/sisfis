@@ -99,4 +99,6 @@ Acesse: https://introblack.000webhostapp.com/IFHelth/
 Dados de login:
 
 * Usuario: admin
-* Senha: lute
+* Senha: 2222
+
+- [ ] Finalizar documentação de correção de bugs
