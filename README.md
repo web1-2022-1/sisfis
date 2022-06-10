@@ -48,10 +48,6 @@ Login/Logout | Funcionando.
 - [ ] Realizar testes de sistema
 - [ ] Finalizar documentação de correção de bugs
     
-<<<<<<< HEAD
-
-=======
->>>>>>> 9081ea5ea1230e182b78ba30bf1f65c833626537
 ### Equipe <h3>
 <table align="center">
     <tr>
