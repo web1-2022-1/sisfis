@@ -39,7 +39,7 @@ if (isset($_POST['Buscar'])) {
 
 if (isset($_POST['Agendar'])){
 
-	if($_POST['idTutor'] != '' ){
+	if(isset($_POST['idTutor'])){
 		$dia = $_POST['dia'];
 		$hora = $_POST['hora'];
 		$idTutorSelecionado = $_POST['idTutor'];
@@ -60,7 +60,7 @@ if (isset($_POST['Agendar'])){
 			</div>
 		<?php }
 	}else{
-		echo "Seleione um tutor!!!!";
+		echo "<br>Seleione um tutor!!!!";
 	}
 }
 
