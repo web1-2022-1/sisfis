@@ -26,7 +26,12 @@ $usuario = new Usuario;
 $agendamento = new Agendamento;
 $disponibilidade = new Disponibilidade;
 
-if (isset($_POST['Buscar'])) {
+if (isset($_POST['Buscar']) &&
+	isset($_POST['dia']) &&
+	$_POST['dia'] != "" &&
+	$_POST['hora'] != "" &&
+	isset($_POST['hora']))
+{
 
 	$dia = $_POST['dia'];
 	$hora = $_POST['hora'];
@@ -35,6 +40,8 @@ if (isset($_POST['Buscar'])) {
 	$disponibilidade->setHoraInicial($hora);
 
 	$DisponibilidadeIdTutor = $disponibilidade->findkey();
+}else{
+	echo "<br>Seleione uma dia e uma hora que você deseja ir treinar!!!!";
 }
 
 if (isset($_POST['Agendar'])){
