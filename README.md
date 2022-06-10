@@ -79,9 +79,6 @@ Login/Logout | Funcionando.
             </a>
         </td>
         <td align="center">
-          - [ ] Corrigir CSS
-- [ ] Realizar testes de sistema
-- [ ] Finalizar documentação de correção de bugs
       <a href="https://github.com/TorquatoSt">
                 <img width="150" src="https://avatars.githubusercontent.com/u/91499584?v=4"/>
                 <br/>
