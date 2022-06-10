@@ -44,10 +44,10 @@ Configurações | Funcionando
 Login/Logout | Funcionando.
 
 ### Próximos passos <h3>
-- [ ] Finalizar layouts 
-- [ ] Desenvolver front-end do sistema
-- [ ] Aplicar correções no sistema
-
+- [ ] Corrigir CSS
+- [ ] Realizar testes de sistema
+- [ ] Finalizar documentação de correção de bugs
+    
 ### Equipe <h3>
 <table align="center">
     <tr>
