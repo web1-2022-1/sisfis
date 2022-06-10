@@ -102,6 +102,6 @@ Dados de login:
 * Senha: 2222
 
 
-- [ ] Finalizar documentação de correção de bugs
+- [ ] Teste de Quantun
 
 
