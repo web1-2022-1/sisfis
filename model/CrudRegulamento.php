@@ -20,7 +20,7 @@ abstract class CrudRegulamento extends DB{
         return $this->idRegulamento;
     }
 
-    public function setIdegulamento($idRegulamento){
+    public function setIdRegulamento($idRegulamento){
         $this->idRegulamento = $idRegulamento;
     }
 }
