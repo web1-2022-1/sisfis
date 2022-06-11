@@ -1,5 +1,5 @@
 <?php
-require '../login/verificalogin.php';
+require_once('../login/verificalogin.php');
 
 ?>
 <!DOCTYPE html>
