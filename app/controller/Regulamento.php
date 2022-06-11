@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../model/CrudRegulamento.php';
+require_once('../../model/CrudRegulamento.php');
 
 class Regulamento extends CrudRegulamento {
     protected $tabela = 'regulamento';
