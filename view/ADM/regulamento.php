@@ -55,7 +55,7 @@ require_once('../../app/controller/Regulamento.php');
                 <?php
                 $regulamentos = $regulamento->findAll();
                 foreach ($regulamentos as $key => $value) {?>
-                    <p><?php echo $value->descricao;?></p>
+                    <p><?php echo "<h3>".$value->idRegulamento.":</h3>".$value->descricao;?></p>
                 <?php
                 }
                 ?>
