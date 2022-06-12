@@ -336,3 +336,12 @@ footer .segundoRodaPe .img-footer1, footer .segundoRodaPe .img-footer2{
 	background-image: url('../../../img/logo-gov.png');
 	background-size: 100% 100%;
 }
+
+/* Para Hospedar */
+
+
+.disclaimer {
+
+    display: none;
+}
+
