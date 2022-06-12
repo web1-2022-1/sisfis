@@ -1,5 +1,10 @@
 <?php
-require_once('../login/verificalogin.php');
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once(__DIR__.'/../login/verificalogin.php');
+require_once(__DIR__.'/requireCss.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,7 +14,7 @@ require_once('../login/verificalogin.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>IFHealth</title>
-	<link rel="stylesheet" type="text/css" href="../../public/css/styleTela1.css">
+	<link rel="stylesheet" type="text/css" <?php echo $css; ?> >
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
@@ -66,6 +71,8 @@ require_once('../login/verificalogin.php');
 				switch ($menuop) {
 
 					case 'home':
+						global $css;
+						$css = ('href="../../public/css/styleTela1.css"');
 						include '../ADM/regulamento.php';
 						break;
 					case 'create':

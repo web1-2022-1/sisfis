@@ -2,6 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+$css = ('href="../../public/css/styleTela1.css"');
+
 require_once('../../app/controller/Regulamento.php');
 
 ?>
@@ -11,7 +13,7 @@ require_once('../../app/controller/Regulamento.php');
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Discente1</title>
-	<link rel="stylesheet" type="text/css" href="css/styleTela7.css">
+	<link rel="stylesheet" type="text/css" href="css/styleTela1.css">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
