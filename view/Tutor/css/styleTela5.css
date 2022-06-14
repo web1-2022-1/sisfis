@@ -93,7 +93,7 @@ html,body{
 	cursor: pointer;
 	font-size: 18px;
 }
-.painelDeEscolha input:nth-of-type(4){
+.painelDeEscolha input:nth-of-type(2){
 	background-color: #A0A0A0;
 }
 

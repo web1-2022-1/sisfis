@@ -9,18 +9,18 @@
 		<?php if ($nivel == 1) {
 		?>
 			<div class="painelDeEscolha">
-				<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
-				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
-				<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
-				<li><a href="../home/dashboard.php?menuop=create">Cadastro</a></li>
-
+				<button><a href="../home/dashboard.php?menuop=home">Regulamento</a></button>
+				<button><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></button>
+				<button><a href="../home/dashboard.php?menuop=noticias">Noticias</a></button>
+				<button type="submit"><a href="../home/dashboard.php?menuop=create">Cadastro</a></button>
 			</div>
+			<!--painelDeEscolha-->
 			
 			<div class="painelDeEscolha">
-				<input type="button" name="Regulamento" value="Regulamento">
-				<input type="button" name="Agendamento" value="Agendamento">
-				<input type="button" name="Notas" value="Notas">
-				<input type="button" name="Cadastrar Tutor" value="Cadastrar Tutor">
+				<input type="submit" name="Regulamento" value="Regulamento">
+				<input type="submit" name="Agendamento" value="Agendamento">
+				<input type="submit" name="Notas" value="Notas">
+				<input type="submit" name="Cadastrar Tutor" value="Cadastrar Tutor">
 
 			</div>
 			<!--painelDeEscolha-->
@@ -60,6 +60,7 @@
 			<div class="painelDeEscolha">
 				<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
 				<li><a href="../home/dashboard.php?menuop=create">Cadastro</a></li>
+				<li><a href="">Horaroios</a></li>
 				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
 				<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
 
@@ -67,7 +68,7 @@
 
 			<div class="painelDeEscolha">
 				<input type="submit" name="Regulamento" value="Regulamento">
-				<input type="submit" name="Horários" value="Horários">
+				<input type="submit" name="Cadastro" value="Cadastro">
 				<input type="submit" name="Agendamento" value="Agendamento">
 				<input type="submit" name="Notas" value="Notas">
 

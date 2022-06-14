@@ -97,7 +97,7 @@ if (isset($_POST['Agendar'])) {
 			<!--texto1-->
 			<form action="" method="POST">
 				<!--ALTERARRRARARARA-->
-				<div class="notas">
+				<div class="select">
 					<p>Data e hora do agendamento:</p>
 					<div class="select-data">
 						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>">

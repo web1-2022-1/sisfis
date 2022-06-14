@@ -71,7 +71,7 @@ require_once('../../app/controller/Usuario.php');
 
 <div class="container">
 			<form action="" method="POST">
-			<div class="horarios">
+			<div class="add-tutor">
 				<h1>Adicionar Discente:</h1>
 				<div class="add-tutor-cadast">
 					<div class="cap1"><p>Nome:</p>
