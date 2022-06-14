@@ -15,6 +15,14 @@
 				<li><a href="../home/dashboard.php?menuop=create">Cadastro</a></li>
 
 			</div>
+			
+			<div class="painelDeEscolha">
+				<input type="button" name="Regulamento" value="Regulamento">
+				<input type="button" name="Agendamento" value="Agendamento">
+				<input type="button" name="Notas" value="Notas">
+				<input type="button" name="Cadastrar Tutor" value="Cadastrar Tutor">
+
+			</div>
 			<!--painelDeEscolha-->
 	</div>
 	<!--container-->
@@ -51,12 +59,19 @@
 
 			<div class="painelDeEscolha">
 				<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
-				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
 				<li><a href="../home/dashboard.php?menuop=create">Cadastro</a></li>
+				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
 				<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
 
 			</div>
 
+			<div class="painelDeEscolha">
+				<input type="submit" name="Regulamento" value="Regulamento">
+				<input type="submit" name="Horários" value="Horários">
+				<input type="submit" name="Agendamento" value="Agendamento">
+				<input type="submit" name="Notas" value="Notas">
+
+			</div><!--painelDeEscolha-->
 			<?php
 			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
 			switch ($menuop) {
@@ -66,6 +81,7 @@
 					include '../Tutor/regulamento.php';
 					break;
 				case 'create':
+					$css = ('href="../Tutor/css/styleTela5.css"');
 					include '../Tutor/create.php';
 					break;
 				case 'agendamento':
@@ -74,7 +90,6 @@
 					break;
 				case 'noticias':
 					$css = ('href="../Tutor/css/styleTela4.css"');
-
 					include '../Tutor/noticias.php';
 					break;
 					// case 'update_env':
@@ -83,13 +98,21 @@
 			}
 		} else { ?>
 			<div class="painelDeEscolha">
-				<li><a href="../home/dashboard.php?menuop=home">Regulamento</a></li>
-				<li><a href="../home/dashboard.php?menuop=horario">Horário</a></li>
-				<li><a href="../home/dashboard.php?menuop=agendamento">Agendamento</a></li>
-				<li><a href="../home/dashboard.php?menuop=noticias">Noticias</a></li>
+				<li><a href="../home/dashboard.php?menuop=home"><button>Regulamento</button></a></li>
+				<li><a href="../home/dashboard.php?menuop=agendamento"><button>Agendamento</button></a></li>
+				<li><a href="../home/dashboard.php?menuop=horario"><button>Horários</button</a></li>
+				<li><a href="../home/dashboard.php?menuop=noticias"><button>Notícias</button></a></li>
 
 			</div>
-			<!--painelDeEscolha-->
+
+			<div class="painelDeEscolha">
+				<input type="submit" name="Regulamento" value="Regulamento">
+				<input type="submit" name="Agendamento" value="Agendamento">
+				<input type="submit" name="Horários" value="Horários">
+				<input type="submit" name="Notas" value="Notas">
+
+			</div><!--painelDeEscolha-->
+
 			<?php
 			$menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
 			switch ($menuop) {
