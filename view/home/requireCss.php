@@ -58,7 +58,6 @@ if ($nivel == 1) {
         case 'agendamento':
             $css = ('href="../Discente/css/styleTela3.css"');
             break;
-
         case 'noticias':
             $css = ('href="../Discente/css/styleTela4.css"');
             break;
