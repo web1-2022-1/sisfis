@@ -4,9 +4,13 @@ define('HOST','localhost');
 
 // ------------ Banco Crud --------------
 
-define('USER','icaro');
-define('PASS','tatakae');
-define('BASE','IFhealth');
+//define('USER','icaro');
+//define('PASS','tatakae');
+//define('BASE','IFhealth');
+
+define('USER', 'root');
+define('PASS', '');
+define('BASE', 'ifhealth');
 
 
 // ------------ Banco Para Hospedar Ícaro Dias --------------
@@ -16,4 +20,3 @@ define('BASE','IFhealth');
 // define('BASE','id17504595_ifhealth');
 
  global $pdo;
-?>
