@@ -91,22 +91,22 @@ Login/Logout | Funcionando.
 </table>
 
 ### Link do sistema <h3>
-Acesse: https://introblack.000webhostapp.com/IFHelth/
+
 Acesse: https://ifhealthsisfis.herokuapp.com/
     
 Dados de login de administrador:
 
 * Usuario: admin
-* Senha: 2222
+* Senha: ifbaiano
     
     
 Dados de login de tutor:
     
-* Usuario: icaro-tutor
+* Usuario: tutor
 * Senha: ifbaiano
 
     
 Dados de login de discente:
 * Usuario: discente
-* Senha: discente
+* Senha: ifbaiano
 
