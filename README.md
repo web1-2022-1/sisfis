@@ -3,7 +3,6 @@ Projeto desenvolvido para matéria de  Laboratório de Programação Web I
 --
 estarenos usando PHP com mysql e modelo MVC
 <img src="https://www.educabras.com/media/faculdades/image/ifbaiano.png">
-<img src="https://www.ifbaiano.edu.br/unidades/bonfim/files/2011/05/Academia.png">
 
 ![Captura de tela de 2022-06-03 09-30-09](https://user-images.githubusercontent.com/71037296/174153795-ad59b4fe-f0f2-4dc8-bb83-103e55d48259.png)
 
