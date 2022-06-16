@@ -93,14 +93,19 @@ Login/Logout | Funcionando.
 ### Link do sistema <h3>
 Acesse: https://introblack.000webhostapp.com/IFHelth/
     
-Dados de login:
+Dados de login de administrador:
 
 * Usuario: admin
 * Senha: 2222
-
+    
+    
+Dados de login de tutor:
+    
 * Usuario: icaro-tutor
 * Senha: ifbaiano
 
+    
+Dados de login de discente:
 * Usuario: discente
 * Senha: discente
 
