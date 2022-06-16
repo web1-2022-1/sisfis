@@ -98,3 +98,17 @@ Login/Logout | Funcionando.
 Acesse: https://ifhealthsisfis.herokuapp.com/
     
 Dados de login de administrador:
+
+* Usuario: admin
+* Senha: ifbaiano
+    
+    
+Dados de login de tutor:
+    
+* Usuario: tutor
+* Senha: ifbaiano
+
+    
+Dados de login de discente:
+* Usuario: discente
+* Senha: ifbaiano
