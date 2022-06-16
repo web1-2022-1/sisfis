@@ -94,16 +94,7 @@ Login/Logout | Funcionando.
 </table>
 
 ### Link do sistema <h3>
-Acesse: https://introblack.000webhostapp.com/IFHelth/
+
+Acesse: https://ifhealthsisfis.herokuapp.com/
     
-Dados de login:
-
-* Usuario: admin
-* Senha: 2222
----
-* Usuario: icaro-tutor
-* Senha: ifbaiano
----
-* Usuario: discente
-* Senha: discente
-
+Dados de login de administrador:
