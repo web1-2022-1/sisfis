@@ -91,7 +91,12 @@ Login/Logout | Funcionando.
         </td>
     </tr>
 </table>
+    
+---
 
+## Documento de Teste e Bugs
+- [Relatorio de correções](Document/teste-e-debang.md)
+    
 ### Link do sistema <h3>
 
 Acesse: https://ifhealthsisfis.herokuapp.com/
