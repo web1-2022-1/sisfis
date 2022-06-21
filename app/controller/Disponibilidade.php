@@ -8,7 +8,7 @@ class Disponibilidade extends CrudDisponibilidade{
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idDisponibilidade = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE $this->idDisponibilidade = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();

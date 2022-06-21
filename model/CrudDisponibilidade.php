@@ -5,7 +5,7 @@ require_once('DB/conexao.php');
 abstract class CrudDisponibilidade extends DB{
 
     protected $tabela;
-    public $idDisponibilidade;
+    public $idDisponibilidade = '"idDisponibilidade"';
     public $idTutor;
     public $dia;
     public $horaInicial;

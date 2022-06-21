@@ -4,7 +4,7 @@ require_once("../../model/CrudAgendamento.php");
 
 class Agendamento extends CrudAgendamento{
     protected $tabela = 'agendamento';
-    private $idAgendamento = 'idAgendamento ';
+    private $idAgendamento = '"idAgendamento"';
    
     //busca 1 item
     public function findUnit($id) {
