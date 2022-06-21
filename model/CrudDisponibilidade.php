@@ -8,8 +8,8 @@ abstract class CrudDisponibilidade extends DB{
     public $idDisponibilidade = '"idDisponibilidade"';
     public $idTutor;
     public $dia;
-    public $horaInicial;
-    public $horaFinal;
+    public $horaInicial = '"horaInicial"';
+    public $horaFinal = '"horaFinal"';
     public $livre;
 
     public function setIdTutor($idTutor) {

@@ -24,7 +24,7 @@ class Disponibilidade extends CrudDisponibilidade{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN horaInicial AND horaFinal) LIMIT 1";
+        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (:hora BETWEEN $this->horaInicial AND $this->horaFinal) LIMIT 1";
         $stm = DB::prepare($sql);
         $stm->bindParam(':date', $this->dia);
         $stm->bindParam(':hora', $this->horaInicial);

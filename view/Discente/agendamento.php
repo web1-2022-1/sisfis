@@ -119,7 +119,7 @@ if (isset($_POST['Agendar'])) {
 						foreach ($usuarios as $key => $value) {
 							if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
 								<option value="<?php echo $value->idUsuario; ?>">
-									<?php echo $value->usuario; ?></option>
+									<?php echo $value->usuario; ?> </option>
 						<?php
 							}
 						} ?>
