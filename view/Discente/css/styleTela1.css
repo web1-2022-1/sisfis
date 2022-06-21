@@ -78,7 +78,6 @@ footer *.container {
 	left: 90%;
 	color: white;
 	background-color: #0A5517;
-
 	border: 0;
 	cursor: pointer;
 	text-transform: uppercase;
@@ -124,9 +123,7 @@ footer *.container {
 
 }
 
-
-
-.painelDeEscolha input:nth-of-type(1) {
+.painelDeEscolha a:nth-of-type(1) {
 	background-color: #A0A0A0;
 
 }
