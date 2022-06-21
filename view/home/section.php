@@ -98,14 +98,12 @@
 					include '../Discente/horario.php';
 					break;
 				case 'noticias':
-					include '../Discente/noticias.php';
+					include(__DIR__.'/../Discente/noticias.php');
 					break;
 					// case 'update_env':
 					// 	include('paginas/discente/update_env.php');
 					// 	break;
-			}
-			?>
-		<?php } ?>
+			}} ?>
 		</div>
 		<!--notas-->
 	</div>
