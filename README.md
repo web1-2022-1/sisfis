@@ -16,7 +16,7 @@ Programação Web I feito no semestre de 2021.2 no Instituto Federal de Educaç�
 ### Ferramentas utilizadas <h3>
  * [Astah UML](https://astah.net/downloads/): É um software de modelagem que permite uma fácil visualização dos componentes do sistema e de como eles se interagem através de diagramas.
  * [Figma](https://www.figma.com): É uma ferramente online com o propósito de modelar os layouts do sistema, dando uma noção mais clara de como será o desenvolvimento das interfaces do sistema.
-* [MySQL Workbench](https://www.mysql.com/products/workbench/): É um sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados, também é uma ferramenta capaz de modelar o diagrama do banco de dados do sistema para facilitar a visualização e entendimento.
+* [PostgreSQL]([https://www.mysql.com/products/workbench/](https://www.postgresql.org/)): É um sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados.
 * [Sublime Text](https://www.sublimetext.com): É um software multiplataforma para edição de código-fonte, podendo ser usada para desenvolvimento para diversos códigos, inclusive para desenvolvimento web.
 * [Trello](https://trello.com/): É uma ferramenta de desenvolvimento de projetos trazendo para os integrantes do projeto uma facilidade em acompanhar cada etapa das atividades a serem feitas.
 
