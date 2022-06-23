@@ -14,11 +14,12 @@ estaremos usando PHP com mysql e modelo MVC
 O sistema web desenvolvido tem como objetivo realizar o gerenciamento de alunos do IFbaiano no uso da academia da instituição. O trabalho consta como requisito fundamental para a disciplina de Laboratório de Programação Web I, realizado durante o semestre de 2021.2 no Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Guanambi.
 
 ### Ferramentas utilizadas <h3>
- * [Astah UML](https://astah.net/downloads/): É um software de modelagem que permite fácil visualização dos componentes do sistema e de como eles interagem através de diagramas.
- * [Figma](https://www.figma.com): Ferramente online com o propósito de modelar os layouts do sistema, dando uma noção mais clara de como será o desenvolvimento de suas interfaces.
-* [MySQL Workbench](https://www.mysql.com/products/workbench/): Sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados, também é capaz de modelar o diagrama do banco de dados do sistema para facilitar a visualização e entendimento.
-* [Sublime Text](https://www.sublimetext.com): Software multiplataforma para edição de código-fonte, pode ser utilizada para desenvolvimento de códigos, inclusive para desenvolvimento web.
-* [Trello](https://trello.com/): Ferramenta de desenvolvimento de projetos trazendo para os integrantes do projeto uma facilidade em acompanhar cada etapa das atividades a serem feitas.
+
+ * [Astah UML](https://astah.net/downloads/): É um software de modelagem que permite uma fácil visualização dos componentes do sistema e de como eles se interagem através de diagramas.
+ * [Figma](https://www.figma.com): É uma ferramente online com o propósito de modelar os layouts do sistema, dando uma noção mais clara de como será o desenvolvimento das interfaces do sistema.
+* [PostgreSQL]([https://www.mysql.com/products/workbench/](https://www.postgresql.org/)): É um sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados.
+* [Sublime Text](https://www.sublimetext.com): É um software multiplataforma para edição de código-fonte, podendo ser usada para desenvolvimento para diversos códigos, inclusive para desenvolvimento web.
+* [Trello](https://trello.com/): É uma ferramenta de desenvolvimento de projetos trazendo para os integrantes do projeto uma facilidade em acompanhar cada etapa das atividades a serem feitas.
 
 ### Linguagens utilizadas <h3>
  * [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
