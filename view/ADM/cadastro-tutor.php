@@ -42,7 +42,6 @@ require_once('../../app/controller/Disponibilidade.php');
 		$dia = $_POST['date'];
 		$horaInicial = $_POST['timeInicial'];
 		$horaFinal = $_POST['timeFinal'];
-		$idTutor = 44;
 		$livre = 1;
 
 		$usuario->setNome($nome);
@@ -51,21 +50,28 @@ require_once('../../app/controller/Disponibilidade.php');
 		$usuario->setNivel(2);
 
 		$disponibilidade->setDia($dia);
-		$disponibilidade->setIdTutor($idTutor);
 		$disponibilidade->setHoraInicial($horaInicial);
 		$disponibilidade->setHoraFinal($horaFinal);
 		$disponibilidade->setLivre($livre);
 
-		if ($usuario->insert() && $disponibilidade->insert()) {
-	?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
-			</div>
-	<?php
+		if ($usuario->insert()) {
+			$usuario->nivel = 2;
+			$idTutor = $usuario->findultimo();
+			$disponibilidade->setIdTutor($idTutor->idUsuario);
+			if ($disponibilidade->insert()) {
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
+			}
 		}
 	}
 
-	if (isset($_POST['Apagar'])) {
+	if (isset($_POST['Apagar']) &&
+	isset($_POST['idTutor']) &&
+	$_POST['idTutor'] != ''	 &&
+	$_POST['idTutor'] != null) {
 		$idTutor = $_POST['idTutor'];
 
 		$usuario->setIdUsuario($idTutor);
