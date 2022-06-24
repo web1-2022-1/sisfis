@@ -21,20 +21,9 @@
             alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
             alert('Current view: ' + info.view.type);
             // change the day's background color just for fun
-            info.dayEl.style.backgroundColor = 'red';
+            info.dayEl.style.backgroundColor = 'green';
         },
-        events: [
-            {
-                title: 'The Title',
-                start: '2020-10-01',
-                end: '2020-10-02'
-            },
-            {
-                title: 'The Title 2',
-                start: '2020-10-05',
-                end: '2020-10-07'
-            }
-        ]
+        events: '../../public/js/event.json',
     });
     calendar.render();
 
