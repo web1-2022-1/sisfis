@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
 require_once('../../app/controller/Usuario.php');
-require_once('../../app/controller/Disponibilidade.php');
 
 ?>
 
@@ -23,39 +22,24 @@ require_once('../../app/controller/Disponibilidade.php');
 
 	<?php
 	$usuario = new Usuario;
-	$disponibilidade = new Disponibilidade;
 
 	if (
 		isset($_POST['Cadastrar']) &&
 		$_POST['nome'] != '' &&
 		$_POST['senha'] != '' &&
-		$_POST['login'] != '' &&
-		$_POST['date'] != '' &&
-		$_POST['timeInicial'] != '' &&
-		$_POST['timeFinal'] != ''
-	) {
+		$_POST['login'] != ''
+		) {
 
 		$nome = $_POST['nome'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
-		$dia = $_POST['date'];
-		$horaInicial = $_POST['timeInicial'];
-		$horaFinal = $_POST['timeFinal'];
-		$idTutor = 44;
-		$livre = 1;
-
 		$usuario->setNome($nome);
 		$usuario->setLogin($login);
 		$usuario->setSenha(md5($senha));
-		$usuario->setNivel(2);
+		$usuario->setNivel(3);
 
-		$disponibilidade->setDia($dia);
-		$disponibilidade->setHoraInicial($horaInicial);
-		$disponibilidade->setHoraFinal($horaFinal);
-		$disponibilidade->setLivre($livre);
-
-		if ($usuario->insert() && $disponibilidade->insert()) {
+		if ($usuario->insert()) {
 	?>
 			<div class="model">
 				<img src="../../public/img/sucess.gif" alt="">
@@ -64,21 +48,29 @@ require_once('../../app/controller/Disponibilidade.php');
 		}
 	}
 
-	if (isset($_POST['Apagar'])) {
-		$idTutor = $_POST['idTutor'];
+	if (isset($_POST['Apagar']) &&
+		isset($_POST['idDiscente']) &&
+		$_POST['idDiscente'] != ''	 &&
+		$_POST['idDiscente'] != null
+		) {
+		$idDiscente = $_POST['idDiscente'];
 
-		$usuario->setIdUsuario($idTutor);
+		$usuario->setIdUsuario($idDiscente);
 
-		if ($usuario->delete()) {
-			echo "Tutor " . $usuario->getIdUsuario() . " excluido com sucesso";
+		if ($usuario->delete())  {
+			?>
+					<div class="model">
+						<img src="../../public/img/sucess.gif" alt="">
+					</div>
+			<?php
 		}
 	}
 
 	if (isset($_POST['Salvar'])) {
 		$descricao = $_POST['descricao'];
-		$idTutor = $_POST['idTutor'];
+		$idDiscente = $_POST['idDiscente'];
 
-		$Tutor->setIdTutor($idTutor);
+		$Tutor->setidDiscente($idDiscente);
 		$Tutor->setDescricao($descricao);
 
 		if ($Tutor->update()) {
@@ -95,7 +87,7 @@ require_once('../../app/controller/Disponibilidade.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"></textarea>
+							<textarea name="nome" require></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
@@ -137,11 +129,11 @@ require_once('../../app/controller/Disponibilidade.php');
 				<div class="select-apagar">
 					<form action="" method="POST">
 						<div class="select-apagar-tutor">
-							<select name="idTutor">
+							<select name="idDiscente">
 								<?php
 								$usuarios = $usuario->findAll();
 								foreach ($usuarios as $key => $value) {
-									if ($value->usuario !=  '' && $value->nivel ==  2) { ?>
+									if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
 										<option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
 								<?php
 									}

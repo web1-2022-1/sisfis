@@ -73,7 +73,7 @@ if (isset($_POST['Agendar'])) {
 		$DisponibilidadeIdTutor = $disponibilidade->findkey();
 
 		$agendamento->fkTutor = $idTutorSelecionado;
-		$agendamento->fkDiscente = 14;
+		$agendamento->fkDiscente = $_SESSION['idUsuario'];
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
 
 		if ($agendamento->insert()) { ?>
@@ -122,6 +122,26 @@ if (isset($_POST['Agendar'])) {
 						<input type="submit" name="Buscar" value="Busca Tutor disponível">
 					</div>
 					<!--botão-agendamento-->
+					
+					<!--semana-->
+					<div class="calendario">
+						<!--CALENDARIOOOOOOO
+					-->
+						<h1>Dias e Horários Disponíveis </h1>
+						<?php
+						$HorarioAgendado = new Disponibilidade;
+
+						$HorarioAgendados = $HorarioAgendado->findAll();
+							foreach ($HorarioAgendados as $key => $value) { ?>
+								<p><?php echo "<br>Dia : " . $value->dia; ?></p>
+								<p><?php echo "Horario Inicial: " . $value->horaInicial; ?></p>
+								<p><?php echo "Horario Final: " . $value->horaFinal; ?></p>
+							<?php
+							}
+						?>
+						
+					</div>
+					<!--calendario-->
 				</div>
 				<!--agendamento-->
 				
