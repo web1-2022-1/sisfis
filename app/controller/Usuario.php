@@ -35,7 +35,7 @@ class Usuario extends CrudUsuario{
     //busca todos os itens
     public function findultimo() {
         $idu = '"idUsuario"';
-        $sql = "SELECT MAX($idu) FROM $this->tabela WHERE nivel = :nivel ORDER BY $idu ASC LIMIT 1";
+        $sql = "SELECT MAX($idu) FROM $this->tabela WHERE nivel = :nivel";
         $stm = DB::prepare($sql);
         $stm->bindParam(':nivel', $this->nivel);
         $stm->execute();
