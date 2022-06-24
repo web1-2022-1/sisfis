@@ -16,11 +16,13 @@ require_once('../../app/controller/Disponibilidade.php');
 	<title>Discente2</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.css';?>">
+	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/css/calendario.css';?>">
 </head>
 
 <body>
 
-	<section>
+<section>
 		<div class="container">
 			<div class="horarios">
 				<h2>Horários da Academia:</h2>
@@ -36,7 +38,7 @@ require_once('../../app/controller/Disponibilidade.php');
 						$Agendamento = new Agendamento;
 						$HorarioAgendado = new Disponibilidade;
 
-						$Agendamento->fkDiscente = 14;
+						$Agendamento->fkDiscente = $_SESSION['idUsuario'];
 						$fkDisponibilidade = $Agendamento->findkey();
 						
 						// $Agendamentos = $Agendamento->findAll();
@@ -155,6 +157,31 @@ require_once('../../app/controller/Disponibilidade.php');
 
 	</section>
 
-</body>
+<section>
+	<div class="container">
+		<div class="horarios">
+			<h2>Horários da Academia:</h2>
+			<div class="horarios-pt1">
+				<div class="semana">
+				</div>
+					<h1>Meus horários </h1>
+				<!--semana-->
+				<div class="calendario">
+					<!--CALENDARIOOOOOOO
+				-->
+    				<div class="calendar"></div>
+					
+				</div>
+				<!--calendario-->
+			</div>
+			<!--horarios-pt1-->
+		</div>
+		<!--horarios-->
+	</div>
+	<!--container-->
+</section>
 
+<script src="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+<script src="<?php echo DIRPAGE.'public/js/calendario.js'; ?>"></script>
+</body>
 </html>
