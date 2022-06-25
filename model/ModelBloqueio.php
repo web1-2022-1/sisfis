@@ -2,7 +2,7 @@
 
 require_once('DB/conexao.php');
 
-abstract class ModelNoticia extends DB{
+abstract class ModelBloqueio extends DB{
 
     protected $tabela;
     public $idNoticia = '"idNoticia"';
