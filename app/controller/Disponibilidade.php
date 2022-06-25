@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../model/CrudDisponibilidade.php");
+require_once(__DIR__."/../../model/CrudDisponibilidade.php");
 
 class Disponibilidade extends CrudDisponibilidade{
     protected $tabela = 'disponibilidade';
@@ -17,10 +17,9 @@ class Disponibilidade extends CrudDisponibilidade{
 
     //busca json
 
-    public function findjson($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE $this->idDisponibilidade = :id";
+    public function findjson() {
+        $sql = "SELECT * FROM events";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
         $f = $stm->fetchall(\PDO::FETCH_ASSOC);
         return json_encode($f);

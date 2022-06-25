@@ -66,8 +66,9 @@ require_once('../../app/controller/Disponibilidade.php');
 					<!--semana-->
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
-					-->						
-    				<div class="calendar"></div>
+					-->
+						
+					<div class="calendar"></div>
 					</div>
 					<!--calendario-->
 				</div>
@@ -103,7 +104,6 @@ require_once('../../app/controller/Disponibilidade.php');
 		<!--container-->
 
 	</section>
-
 <script src="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.js'; ?>"></script>
 <script src="<?php echo DIRPAGE.'public/js/calendario.js'; ?>"></script>
 </body>
