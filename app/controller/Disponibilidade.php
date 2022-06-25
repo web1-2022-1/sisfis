@@ -68,10 +68,12 @@ class Disponibilidade extends CrudDisponibilidade{
         
         $start1 = $start->format("Y-m-d H:i:s");
         $end1 = $end->format("Y-m-d H:i:s");
- 
-        $this->livre = "tatakae";
 
-        $sql = 'INSERT INTO events ("start", "end") VALUES (:horaInicial, :horaFinal)';
+        $title = "'Livre'";        
+        $color = "'green'";     
+
+        $sql = 'INSERT INTO events (title, color, "start", "end") 
+        VALUES ('.$title.','. $color.', :horaInicial, :horaFinal)';
         $stm = DB::prepare($sql);
         $stm->bindParam(':horaInicial', $start1);
         $stm->bindParam(':horaFinal', $end1);

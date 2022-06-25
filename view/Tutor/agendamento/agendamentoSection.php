@@ -14,14 +14,12 @@
         
         if ($on->bloqueio) {?>
         <form action="" method="POST">
-        <input type="hidden" name="on-off" value="click">
         <input type="submit" name="on-off" value="false">
         <?php
 
         }else{ ?>
 
         <form action="" method="POST">
-        <input type="hidden" name="on-off" value="click">
         <input type="submit" name="on-off" value="true">
         <?php 
         }
@@ -59,7 +57,6 @@
         <!--select-min-->
     </div>
     <!--select-->
-    <p>*Nesse horario estará presente o seguinte tutor: XXXXX</p>
     <div class="botão-agendamento">
         <input type="submit" name="Agendar" value="Agendar">
     </div>
