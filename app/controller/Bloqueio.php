@@ -6,7 +6,6 @@ class Bloqueio extends ModelBloqueio {
     protected $tabela = 'noticia';
 
    
-      
     //busca 1 item
     public function findUnit($id) {
         $sql = "SELECT * FROM $this->tabela WHERE id = :id";
@@ -51,6 +50,4 @@ class Bloqueio extends ModelBloqueio {
     }
     
 }
-
-
 ?>
