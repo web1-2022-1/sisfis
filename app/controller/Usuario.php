@@ -14,9 +14,25 @@ class Usuario extends CrudUsuario{
         $stm->execute();
         return $stm->fetchAll();
     }
+
     //busca todos os itens
     public function findAll() {
         $sql = "SELECT * FROM $this->tabela";
+        $stm = DB::prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll();
+    }
+
+    //busca todos os itens
+    public function findAllBloqueio() {
+        $idD = '"idDiscente"';
+        $idU = '"idUsuario"';
+
+        $sql = "SELECT * FROM $this->tabela AS u
+        INNER JOIN bloqueio AS b
+        ON b.$idD = u.$idU
+        WHERE b.bloqueio = 'false'";
+
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
@@ -79,8 +95,8 @@ class Usuario extends CrudUsuario{
 //deleta  1 item
     public function delete() {
         $id = '"idUsuario"';
-        $cascade = '"CASCADE"';
-        $sql = "DELETE FROM $this->tabela WHERE $id = :id $cascade";
+        // $cascade = '"CASCADE"';
+        $sql = "DELETE FROM $this->tabela WHERE $id = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $this->idUsuario, PDO::PARAM_INT);
         return $stm->execute();
