@@ -1,3 +1,16 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require_once(__DIR__.'/../../app/controller/Agendamento.php');
+require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
+require_once(__DIR__.'/../../app/controller/Usuario.php');
+require_once(__DIR__.'/../../app/controller/');
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +22,55 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
 </head>
+
+<?php
+	$usuario = new Usuario;
+	$disponibilidade = new Disponibilidade;
+
+	if (
+		isset($_POST['Agendar'])
+		) {
+
+		$livre = 1;
+
+		$dia = $_POST['date'];
+		$horaInicial = $_POST['timeInicial'];
+		$horaFinal = $_POST['timeFinal'];
+
+		$disponibilidade->setDia($dia);
+		$disponibilidade->setHoraInicial($horaInicial);
+		$disponibilidade->setHoraFinal($horaFinal);
+		$disponibilidade->setLivre($livre);
+
+		
+		$disponibilidade->setIdTutor($_SESSION['idUsuario']);
+		if($disponibilidade->insert()){
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
+		}
+	}
+
+	if (
+		isset($_POST['Bloquear'])
+		) {
+
+		$idDiscente = $_POST['idDiscente'];
+		$tempo = $_POST['tempo'];
+		
+
+
+		if($disponibilidade->insert()){
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
+		}
+	}
+	?>
 
 <section>
 	<div class="container">
@@ -29,6 +91,7 @@
 
 <section>
 	<div class="container">
+			<form action="" method="POST">
 		<div class="agendamento">
 			<div class="texto1">
 				<h1>Agende seu horário:</h1>
@@ -55,12 +118,14 @@
 			<!--botão-agendamento-->
 		</div>
 		<!--agendamento-->
+			</form>
 	</div>
 	<!--container-->
 </section>
 
 <section>
 	<div class="container">
+		<form action="" method="POST">
 		<div class="bloquear-aluno">
 			<div class="texto1">
 				<h1>Bloquear aluno:</h1>
@@ -69,25 +134,37 @@
 			<!--texto1-->
 			<div class="select-bloqueio">
 				<div class="select-bloqueio-aluno">
-					<select name="Aluno">
-						<option>Aluno</option>
-						<option>2</option>
-					</select>
+				<select name="idDiscente">
+					<?php
+					$usuarios = $usuario->findAll();
+					foreach ($usuarios as $key => $value) {
+						if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
+							<option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
+					<?php
+						}
+					} ?>
+				</select>
 
 				</div>
 				<!--select-bloqueio-aluno-->
 				<p>Tempo:</p>
 				<div class="select-tempo-bloqueio">
-					<select name="tempo-bloqueio">
-						<option>Dias:</option>
-						<option>2</option>
+					<select name="tempo">
+						<option>1 dia</option>
+						<option>2 dias</option>
+						<option>3 dias</option>
+						<option>5 dias</option>
+						<option>1 semana</option>
+						<option>2 semana</option>
+						<option>1 mês</option>
 					</select>
 
-					<input type="submit" name="Agendar" value="Bloquear">
-				</div>
-				<!--agendamento-->
+				<input type="submit" name="Bloquear" value="Bloquear">
 			</div>
-			<!--container-->
+			<!--agendamento-->
+		</form>
+	</div>
+	<!--container-->
 </section>
 
 <section>
@@ -100,10 +177,16 @@
 			<!--texto1-->
 			<div class="select-desbloqueio">
 				<div class="select-desbloqueio-aluno">
-					<select name="Aluno">
-						<option>Aluno</option>
-						<option>2</option>
-					</select>
+				<select name="idDiscente">
+					<?php
+					$usuarios = $usuario->findAll();
+					foreach ($usuarios as $key => $value) {
+						if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
+							<option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
+					<?php
+						}
+					} ?>
+				</select>
 
 					<input type="submit" name="Agendar" value="Desloquear">
 
