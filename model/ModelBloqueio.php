@@ -5,23 +5,26 @@ require_once('DB/conexao.php');
 abstract class ModelBloqueio extends DB{
 
     protected $tabela;
-    public $idNoticia = '"idNoticia"';
-    public $descricao;
+    public $idBloqueio;
+    public $idTutor;
+    public $idDiscente;
+    public $tempo;
+    public $bloqueio = true;
 
-    public function getDescricao(){
-        return $this->descricao;
+    public function gettempo(){
+        return $this->tempo;
     }
 
-    public function setDescricao($descricao){
-        $this->descricao = $descricao;
+    public function settempo($tempo){
+        $this->tempo = $tempo;
     }
 
-    public function getIdNoticia(){
-        return $this->idNoticia;
+    public function getbloqueio(){
+        return $this->bloqueio;
     }
 
-    public function setIdNoticia($id){
-        $this->idNoticia = $id;
+    public function setbloqueio($id){
+        $this->bloqueio = $id;
     }
 }
 

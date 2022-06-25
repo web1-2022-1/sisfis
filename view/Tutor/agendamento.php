@@ -26,6 +26,7 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 <?php
 	$usuario = new Usuario;
 	$disponibilidade = new Disponibilidade;
+	$bloqueio = new Bloqueio;
 
 	if (
 		isset($_POST['Agendar'])
@@ -57,12 +58,28 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 		isset($_POST['Bloquear'])
 		) {
 
-		$idDiscente = $_POST['idDiscente'];
-		$tempo = $_POST['tempo'];
-		
+		$bloqueio->idDiscente = $_POST['idDiscente'];
+		$bloqueio->tempo = $_POST['tempo'];
+		$bloqueio->idTutor = $_SESSION['idUsuario'];
 
+		if($bloqueio->insert()){
+		?>
+				<div class="model">
+					<img src="../../public/img/sucess.gif" alt="">
+				</div>
+		<?php
+		}
+	}
+	
+	if (
+		isset($_POST['on-off'])
+		) {
 
-		if($disponibilidade->insert()){
+		$bloqueio->idDiscente = $_SESSION['idUsuario'];
+		$bloqueio->idTutor = $_SESSION['idUsuario'];
+		$bloqueio->bloqueio = $_POST['on-off'];
+
+		if($bloqueio->update()){
 		?>
 				<div class="model">
 					<img src="../../public/img/sucess.gif" alt="">
@@ -78,8 +95,29 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 			<h1>Bloquer agendamento:</h1>
 			<div class="texto1-bt">
 				<h2>Agendamento:</h2>
-				<input type="submit" name="on/off" value="Ligado/Desligado">
 
+				<?php
+				
+				$bloqueio->idDiscente = $_SESSION['idUsuario'];
+				$bloqueio->idTutor = $_SESSION['idUsuario'];
+				$on = $bloqueio->findUnit();
+				
+				if ($on->bloqueio) {?>
+				<form action="" method="POST">
+				<input type="hidden" name="on-off" value="click">
+				<input type="submit" name="on-off" value="false">
+				<?php
+
+				}else{ ?>
+
+				<form action="" method="POST">
+				<input type="hidden" name="on-off" value="click">
+				<input type="submit" name="on-off" value="true">
+				<?php 
+				}
+				?>
+
+			</form>
 			</div>
 			<!--texto1-->
 
@@ -150,13 +188,13 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 				<p>Tempo:</p>
 				<div class="select-tempo-bloqueio">
 					<select name="tempo">
-						<option>1 dia</option>
-						<option>2 dias</option>
-						<option>3 dias</option>
-						<option>5 dias</option>
-						<option>1 semana</option>
-						<option>2 semana</option>
-						<option>1 mês</option>
+						<option value="1">1 dia</option>
+						<option value="2">2 dias</option>
+						<option value="3">3 dias</option>
+						<option value="4">5 dias</option>
+						<option value="5">1 semana</option>
+						<option value="6">2 semana</option>
+						<option value="7">1 mês</option>
 					</select>
 
 				<input type="submit" name="Bloquear" value="Bloquear">
