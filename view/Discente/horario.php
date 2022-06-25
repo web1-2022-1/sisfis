@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
+require_once('../../model/DB/variaveis.php');
 require_once('../../app/controller/Agendamento.php');
 require_once('../../app/controller/Disponibilidade.php');
 
@@ -16,8 +17,8 @@ require_once('../../app/controller/Disponibilidade.php');
 	<title>Discente2</title>
 	<link rel="stylesheet" type="text/css" <?php echo $css ?>>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.css';?>">
-	<link rel="stylesheet" href="<?php echo DIRPAGE.'public/css/calendario.css';?>">
+	<link rel="stylesheet" href="<?php echo '../../public/js/fullcalendar/lib/main.min.css';?>">
+	<link rel="stylesheet" href="<?php echo '../../public/css/calendario.css';?>">
 </head>
 
 <body>
@@ -104,7 +105,7 @@ require_once('../../app/controller/Disponibilidade.php');
 		<!--container-->
 
 	</section>
-<script src="<?php echo DIRPAGE.'public/js/fullcalendar/lib/main.min.js'; ?>"></script>
-<script src="<?php echo DIRPAGE.'public/js/calendario.js'; ?>"></script>
+<script src="<?php echo '../../public/js/fullcalendar/lib/main.min.js'; ?>"></script>
+<script src="<?php echo '../../public/js/calendario.js'; ?>"></script>
 </body>
 </html>
