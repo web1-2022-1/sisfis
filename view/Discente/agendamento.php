@@ -31,8 +31,10 @@ if (
 	isset($_POST['Buscar']) &&
 	isset($_POST['dia']) &&
 	$_POST['dia'] != "" &&
+	$_POST['dia'] != null &&
+	isset($_POST['hora']) &&
 	$_POST['hora'] != "" &&
-	isset($_POST['hora'])
+	$_POST['hora'] != null
 ) {
 
 	$dia = $_POST['dia'];
@@ -125,8 +127,16 @@ if (isset($_POST['Agendar'])) {
 					</div>
 					<!--botão-agendamento-->
 					<?php
-					if (isset($_POST['Buscar']) &&
-					$DisponibilidadeIdTutor->idTutor != '' 
+					if (
+						isset($_POST['Buscar']) &&
+						isset($_POST['dia']) &&
+						$_POST['dia'] != "" &&
+						$_POST['dia'] != null &&
+						isset($_POST['hora']) &&
+						$_POST['hora'] != "" &&
+						$_POST['hora'] != null &&
+						$DisponibilidadeIdTutor->idTutor != ''  &&
+						$DisponibilidadeIdTutor->idTutor != null
 					) {?>
 							
 						<!--ALTERAR--->
@@ -150,7 +160,13 @@ if (isset($_POST['Agendar'])) {
 					?>
 				</div>
 			</form>
-					
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="agendamento">
 			<div class="horarios">
 
 				<h2>Horários da Academia:</h2>
@@ -161,35 +177,16 @@ if (isset($_POST['Agendar'])) {
 					<div class="calendario">
 						<!--CALENDARIOOOOOOO
 					-->
-						<div class="calendar"></div>
+						<div class="calendarTutor"></div>
 					</div>
 					<!--calendario-->
 				</div>
 				<!--horarios-pt1-->
-			</div>
-					<!--semana-->
-					<div class="calendario">
-						<!--CALENDARIOOOOOOO
-					-->
-						<h1>Dias e Horários Disponíveis </h1>
-						<?php
-						$HorarioAgendado = new Disponibilidade;
 
-						$HorarioAgendados = $HorarioAgendado->findAll();
-							foreach ($HorarioAgendados as $key => $value) { ?>
-								<p><?php echo "<br>Dia : " . $value->dia; ?></p>
-								<p><?php echo "Horario Inicial: " . $value->horaInicial; ?></p>
-								<p><?php echo "Horario Final: " . $value->horaFinal; ?></p>
-							<?php
-							}
-						?>
-						
-					</div>
-					<!--calendario-->
-				</div>
-				<!--agendamento-->
-		</div>
-		<!--container-->
+			</div>
+			<!--agendamento-->
+	</div>
+	<!--container-->
 </section>
 
 </body>
