@@ -31,8 +31,7 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 					</div>
 					<!--semana-->
 					<div class="calendario">
-						<!--CALENDARIOOOOOOO
-					-->
+						<!--CALENDARIOOOOOOO-->
 						<div class="calendarTutor"></div>
 					</div>
 					<!--calendario-->
@@ -45,21 +44,10 @@ require_once(__DIR__.'/../../app/controller/Disponibilidade.php');
 							<h2>Meus Horários:</h2>
 						</div>
 						<!--h2-->
-						<div class="select">
-							<select name="select">
-								<option value="valor1">Periodo 1</option>
-								<option value="valor2" selected>Periodo 2</option>
-								<option value="valor3">Periodo 2</option>
-							</select>
-						</div>
-						<!--select-->
 					</div>
 					<!--seletor-periodo-->
-					<div class="meus-horarios">
-						<ul>
-							<input type="date" name="" id="">
-						</ul>
-					</div>
+					
+
 					<!--meus-horarios-->
 				</div>
 				<!--horarios-pt2-->

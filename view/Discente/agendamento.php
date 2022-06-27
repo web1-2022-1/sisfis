@@ -45,11 +45,6 @@ if (
 	$duracao = '01:00';
 	$horaFinal = date('H:i', strtotime("{$horaInicial[0]} hours {$horaInicial[1]} minutes  + {$duracao[0]} hours {$duracao[1]} minutes "));
 
-	// echo "<br><br><br><br>".$horaInicial;
-	// echo "<br><br><br><br>".$horaFinal;
-	// echo "<br><br><br><br>". date('H:i',strtotime($horaInicial));
-	// echo "<br><br><br><br>". date('H:i',strtotime($duracao));
-
 	$disponibilidade->setDia($dia);
 	$disponibilidade->setHoraInicial($horaInicial);
 	$disponibilidade->setHoraFinal($horaFinal);
@@ -88,22 +83,18 @@ if (isset($_POST['Agendar'])) {
 				</form>
 			</div>
 
-			<?php
-			if(sleep(2)){?>
-				<style>
-				.modal img {
-					display: none;
-					}
-				</style>
-			<?php
+			<?php		
+			} else {?>
 		
-			}
-			?>
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>Você já possui agendamento nesse horário !!!</h3>
+			</form>
+		</div>
 
-			<?php
-			
-			?>
-<?php
+		<?php	
 		}
 	} else {
 		echo "<br>Seleione um tutor!!!!";
