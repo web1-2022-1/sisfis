@@ -86,7 +86,7 @@ require_once('../../app/controller/Noticia.php');
 					<h2>Digite aqui a nova notícia:</h2>
 					<form action="" method="POST">
 						<div class="texto-add-nota">
-							<textarea name="descricao"></textarea>
+							<textarea name="descricao" required></textarea>
 							<div class="tad-btt">
 								<input type="submit" name="Adicionar" value="Adicionar">
 							</div>
@@ -122,7 +122,7 @@ require_once('../../app/controller/Noticia.php');
 						</div>
 						<!--apagar1-->
 						<div class="apagar2">
-							<textarea name="descricao"></textarea>
+							<textarea name="descricao" required></textarea>
 							<div class="apagar3">
 								<input type="submit" name="Remover" value="Remover">
 								<input type="submit" name="Salvar" value="Salvar">

@@ -118,8 +118,8 @@ if (isset($_POST['Agendar'])) {
 				<div class="select">
 					<p>Data e hora do agendamento:</p>
 					<div class="select-data">
-						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>">
-						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>">
+						<input type="date" name="dia" id="" value="<?php echo $disponibilidade->dia ?>" required>
+						<input type="time" name="hora" id="" value="<?php echo $disponibilidade->horaInicial ?>" required>
 					</div>
 					<!--select-->
 					<div class="botão-agendamento2">
