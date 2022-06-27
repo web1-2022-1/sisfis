@@ -80,19 +80,29 @@ if (isset($_POST['Agendar'])) {
 		$agendamento->fkDisponibilidade = $DisponibilidadeIdTutor->idDisponibilidade;
 
 		if ($agendamento->insert()) { ?>
-			<style>
-				.modal img {
-					display: block;
-				}
-			</style>
+		
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+
 			<?php
-			sleep(2);
-			?>
-			<style>
+			if(sleep(2)){?>
+				<style>
 				.modal img {
-					display: block;
-				}
-			</style>
+					display: none;
+					}
+				</style>
+			<?php
+		
+			}
+			?>
+
+			<?php
+			
+			?>
 <?php
 		}
 	} else {
@@ -102,9 +112,6 @@ if (isset($_POST['Agendar'])) {
 
 ?>
 
-<div class="modal">
-	<img src="../../public/img/sucess.gif" alt="" srcset="">
-</div>
 <section>
 	<div class="container">
 		<div class="agendamento">
@@ -135,6 +142,7 @@ if (isset($_POST['Agendar'])) {
 						isset($_POST['hora']) &&
 						$_POST['hora'] != "" &&
 						$_POST['hora'] != null &&
+						isset($DisponibilidadeIdTutor->idTutor) &&
 						$DisponibilidadeIdTutor->idTutor != ''  &&
 						$DisponibilidadeIdTutor->idTutor != null
 					) {?>
@@ -150,7 +158,8 @@ if (isset($_POST['Agendar'])) {
 										<?php echo $value->usuario; ?> </option>
 							<?php
 								}
-							} ?>
+							} 
+							?>
 						</select>
 						<input type="submit" name="Agendar" value="Agendar">
 						</div>

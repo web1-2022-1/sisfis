@@ -72,11 +72,13 @@ require_once('../../app/controller/Disponibilidade.php');
 			$idTutor = $usuario->findultimo();
 			$disponibilidade->setIdTutor($idTutor->max);
 			$disponibilidade->insert();
-			}
-		?>
-				<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
+			}?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
 		<?php
 		}
 	}
@@ -89,11 +91,14 @@ require_once('../../app/controller/Disponibilidade.php');
 
 		$usuario->setIdUsuario($idTutor);
 
-		if ($usuario->delete()) { ?>
-			<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
-			<?php
+		if ($usuario->delete()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 
@@ -104,11 +109,14 @@ require_once('../../app/controller/Disponibilidade.php');
 		$Tutor->setIdTutor($idTutor);
 		$Tutor->setDescricao($descricao);
 
-		if ($Tutor->update()) { ?>
-			<div class="model">
-					<img src="../../public/img/sucess.gif" alt="">
-				</div>
-			<?php
+		if ($Tutor->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 	
@@ -122,7 +130,6 @@ require_once('../../app/controller/Disponibilidade.php');
 		$dia = $_POST['date0'];
 		$horaInicial = $_POST['timeInicial0'];
 		$horaFinal = $_POST['timeFinal0'];
-		$idTutor = 44;
 		$livre = 1;
 
 		?>

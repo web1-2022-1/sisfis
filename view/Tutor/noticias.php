@@ -55,8 +55,14 @@ require_once('../../app/controller/Noticia.php');
 		$Noticia->setIdNoticia($idNoticia);
 		$Noticia->setDescricao($descricao);
 
-		if ($Noticia->update()) {
-			echo "Noticia " . $descricao . " atualizado com sucesso";
+		if ($Noticia->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+			<?php
 		}
 	}
 	?>

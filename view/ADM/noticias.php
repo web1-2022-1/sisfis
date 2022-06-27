@@ -31,8 +31,14 @@ require_once('../../app/controller/Noticia.php');
 
 		$Noticia->setDescricao($descricao);
 
-		if ($Noticia->insert()) {
-			echo "Noticia " . $descricao . " inserido com sucesso";
+		if ($Noticia->insert()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 	if (isset($_POST['Remover'])) {
@@ -40,8 +46,15 @@ require_once('../../app/controller/Noticia.php');
 
 		$Noticia->setIdNoticia($idNoticia);
 
-		if ($Noticia->delete()) {
-			echo "Noticia " . $idNoticia . " excluido com sucesso";
+		if ($Noticia->delete()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
+
 		}
 	}
 	if (
@@ -55,8 +68,14 @@ require_once('../../app/controller/Noticia.php');
 		$Noticia->setIdNoticia($idNoticia);
 		$Noticia->setDescricao($descricao);
 
-		if ($Noticia->update()) {
-			echo "Noticia " . $descricao . " atualizado com sucesso";
+		if ($Noticia->update()) {?>
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
+			</div>
+		<?php
 		}
 	}
 	?>

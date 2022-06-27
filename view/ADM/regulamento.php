@@ -26,9 +26,13 @@ require_once('../../app/controller/Regulamento.php');
 		$regulamento->setDescricao($descricao);
 
 		if ($regulamento->insert()) { ?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
 			</div>
+
 		<?php
 		}
 	}
@@ -39,9 +43,13 @@ require_once('../../app/controller/Regulamento.php');
 		$regulamento->setIdRegulamento($idRegulamento);
 
 		if ($regulamento->delete()) { ?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
 			</div>
+
 		<?php
 		}
 	}
@@ -53,9 +61,13 @@ require_once('../../app/controller/Regulamento.php');
 		$regulamento->setDescricao($descricao);
 
 		if ($regulamento->update()) { ?>
-			<div class="model">
-				<img src="../../public/img/sucess.gif" alt="">
+			<div class="modal">
+				<form action="" method="POST">
+					<img src="../../public/img/sucess.gif" alt="" srcset="">
+					<input type="submit" value="fecha">
+				</form>
 			</div>
+
 	<?php
 		}
 	}
