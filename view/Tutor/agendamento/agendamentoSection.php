@@ -12,7 +12,7 @@
         $bloqueio->idTutor = $_SESSION['idUsuario'];
         $on = $bloqueio->findUnit();
         
-        if ($on->bloqueio) {?>
+        if ($on) {?>
         <form action="" method="POST">
         <input type="submit" name="on-off" value="false">
         <?php
@@ -81,7 +81,7 @@
         <div class="select-bloqueio-aluno">
         <select name="idDiscente">
             <?php
-            $usuarios = $usuario->findAllDesbloqueio();
+            $usuarios = $usuario->findAllBloqueio();
             foreach ($usuarios as $key => $value) {
                 if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
                     <option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>
@@ -125,7 +125,7 @@
             <form action="" method="POST">
         <select name="idDiscente">
             <?php
-            $usuarios = $usuario->findAllBloqueio();
+            $usuarios = $usuario->findAllDesbloqueio();
             foreach ($usuarios as $key => $value) {
                 if ($value->usuario !=  '' && $value->nivel ==  3) { ?>
                     <option value="<?php echo $value->idUsuario; ?>"><?php echo $value->usuario; ?></option>

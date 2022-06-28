@@ -16,7 +16,11 @@ class Bloqueio extends ModelBloqueio {
         $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
         $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
         $stm->execute();
-        return $stm->fetch();
+        if ($stm->rowCount() > 0) {
+            return true;
+        }else{
+            return false;
+        }
     }
     //busca todos os itens
     public function findAll() {
@@ -32,7 +36,7 @@ class Bloqueio extends ModelBloqueio {
         $idT = '"idTutor"';
         $tempo = '"tempo"';
         $sql = "INSERT INTO $this->tabela ($idD, $idT, $tempo, bloqueio) 
-        VALUES (:idDiscente, :idTutor, :tempo, 'false')";
+        VALUES (:idDiscente, :idTutor, :tempo, 'true')";
         $stm = DB::prepare($sql);
         $stm->bindParam(':idDiscente', $this->idDiscente);
         $stm->bindParam(':idTutor', $this->idTutor);
@@ -46,15 +50,29 @@ class Bloqueio extends ModelBloqueio {
         $idT = '"idTutor"';
         $tempo = '"tempo"';
 
-        $sql = "UPDATE $this->tabela 
-        SET bloqueio = :bloqueio 
-        WHERE $idD = :idd AND $idT = :idt";
-
+        $idD = '"idDiscente"';
+        $idT = '"idTutor"';
+        $sql = "SELECT bloqueio FROM $this->tabela 
+        WHERE  $idD = :idd AND $idT = :idt ";
         $stm = DB::prepare($sql);
         $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
         $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
-        $stm->bindParam(':bloqueio', $this->bloqueio);
-        return $stm->execute();
+        $stm->execute();
+        
+        if ($stm->rowCount() > 0) {
+            $sql = "UPDATE $this->tabela 
+            SET bloqueio = :bloqueio 
+            WHERE $idD = :idd AND $idT = :idt";
+    
+            $stm = DB::prepare($sql);
+            $stm->bindParam(':idd', $this->idDiscente, PDO::PARAM_INT);
+            $stm->bindParam(':idt', $this->idTutor, PDO::PARAM_INT);
+            $stm->bindParam(':bloqueio', $this->bloqueio);
+            return $stm->execute();
+        }else{
+            return false;
+        }
+
     }
 
     //update de itens

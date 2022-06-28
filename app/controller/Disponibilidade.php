@@ -67,7 +67,10 @@ class Disponibilidade extends CrudDisponibilidade{
         
         $hora1 = '"horaInicial"';
         $hora2 = '"horaFinal"';
-        $sql = "SELECT * FROM $this->tabela WHERE dia = :date AND (( :horaInicial BETWEEN $hora1 AND $hora2) OR ( :horaFinal BETWEEN $hora1 AND $hora2))";
+        $sql = "SELECT * FROM $this->tabela 
+        WHERE dia = :date AND 
+        (( :horaInicial BETWEEN $hora1 AND $hora2) OR 
+        ( :horaFinal BETWEEN $hora1 AND $hora2))";
         $stm = DB::prepare($sql);
         $stm->bindParam(':date', $this->dia);
         $stm->bindParam(':horaInicial', $this->horaInicial);
@@ -143,9 +146,9 @@ class Disponibilidade extends CrudDisponibilidade{
     
 //deleta  1 item
     public function delete() {
-        $sql = "DELETE FROM $this->tabela WHERE $this->idDisponibilidade = :id";
+        $sql = "DELETE FROM events WHERE id = :id";
         $stm = DB::prepare($sql);
-        $stm->bindParam(':id', $this->iddisponibilidade, PDO::PARAM_INT);
+        $stm->bindParam(':id', $this->idDisponibilidade, PDO::PARAM_INT);
         return $stm->execute();
     }
 }
