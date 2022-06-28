@@ -34,7 +34,18 @@ if (
     </div>
 
     <?php
-    }
+    } else {?>
+		
+		<div class="modal">
+			<form action="" method="POST">
+				<img src="../../public/img/falha.gif" alt="" srcset="">
+				<input type="submit" value="fecha">
+				<h3>Você já possui agendamento nesse horário !!!</h3>
+			</form>
+		</div>
+
+		<?php	
+		}
 }
 
 if (
