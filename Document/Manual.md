@@ -13,7 +13,7 @@ Acesse o código do sistema e no caminho .../model/bd mude o usuário, a senha e
 # Para rodar o site
 
 - Faça o download do arquivo .zip no [Readme](https://github.com/web1-2022-1/sisfis/blob/main/README.md);
-- Adicione o arquivo na pasta do apache (htdocs no windows, hwww no Linux);
+- Adicione o arquivo na pasta do apache (htdocs no windows, www no Linux);
 - Extraia os arquivos do .zip;
 - Entre na pasta "model";
 - Entre na pasta "DB";
