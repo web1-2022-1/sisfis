@@ -7,12 +7,26 @@ Tendo as ferramentas, será necessário rodar o script das tabelas SQL no banco,
 
 Acione o apache enviando a aplicação para a pasta htdochtml (via Xampp no Windows) ou www (via terminal no Linux).
 
-Acesse o código do sistema e no caminho .../model/bd mude o usuário, a senha e o banco no arquivo variáveis. Com as variáveis configuradas, basta rodar a aplicação no 
-localhost.
+Acesse o código do sistema e no caminho .../model/bd mude o usuário, a senha e o banco no arquivo variáveis. Com as variáveis configuradas, basta rodar a aplicação no localhost.
+
+
+# Para rodar o site
+
+- Faça o download do arquivo .zip no [Readme](https://github.com/web1-2022-1/sisfis/blob/main/README.md);
+- Adicione o arquivo na pasta do apache (htdocs no windows, hwww no Linux);
+- Extraia os arquivos do .zip;
+- Entre na pasta "model";
+- Entre na pasta "DB";
+- Acessar o arquivo "Variáveis";
+- Modificar a linha 20 trocando ```define('HOST','ec2-52-72-56-59.compute-1.amazonaws.com');``` para ```define('HOST','localhost');```;
+- Modificar a linha 21 trocando ```define('USER','zhxqqnaojtwbpu');``` para ```define('USER','usuário do seu banco de dados');```;
+- Modificar a linha 22 trocando ```define('PASS','5147bd0fc1127ed10f697b76e341d823c15cc4814db88c2c3b6d601218f7f8e3');``` para ```define('PASS','Senha do seu banco de dados');```;
+- Modificar a linha 23 trocando ```define('BASE','d9p5jd8s400ip5');``` para ```define('BASE','banco de dados que está sendo utilizado');```;
+
 
 ## Instalando e configurando o Apache 2.4.41 no Linux
 
-- Abra o terminal pressionando as teclas ```Ctrl``` + ```Alt``` + ```t```
+- Abra1 o terminal pressionando as teclas ```Ctrl``` + ```Alt``` + ```t```
 - Digite o comando a seguir para fazer a instalação do apache2 e já mostrar a versão instalada;
 ```
 sudo apt install apache2 && apache2 -v
