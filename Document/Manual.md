@@ -155,3 +155,25 @@ su postgres -c psql
 ALTER USER postgres WITH PASSWORD 'senha';
 \q
 ```
+
+
+
+## Instalando e configurando o PostgreSQL no Windows
+
+- Faça o download através do site oficial https://www.postgresql.org/download/windows/ ;
+- Abra o instalador;
+- Selecione "Next" ;
+- Selecione "Next" novamente;
+- Selecione os componentes que deseja instalar (pode manter todos sem problemas);
+- Selecione "Next" ;
+- Selecione "Next" novamente;
+- Defina a senha de superuser do banco;
+- Selecione "Next" ;
+- Selecione "Next" novamente;
+- Selecione a porta que o banco irá usar (pode manter a padrão desde que não entre em conflito com outras já utilizadas);
+- Selecione "Next" ;
+- Selecione a opção "Default";
+- Selecione "Next" ;
+- Selecione "Next" novamente;
+- Desmarque a opção de abrir o stack builder;
+- Selecione "Finish".
