@@ -5,58 +5,64 @@ ini_set("display_errors", 1);
 
 global $css;
 
-if ($nivel == 1){
+if ($nivel == 1) {
     $menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
 
     switch ($menuop) {
 
         case 'home':
-            $css = ('href="../../public/css/styleTela1.css"');
-            break;
-        case 'create':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../ADM/css/styleTela1.css"');
             break;
         case 'agendamento':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../ADM/css/styleTela2.css"');
             break;
         case 'noticias':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../ADM/css/styleTela3.css"');
             break;
-    }}elseif ($nivel == 2) { 
+        case 'cadastro-tutor':
+            $css = ('href="../ADM/css/styleTela4.css"');
+            break;
+        case 'cadastro-discente':
+            $css = ('href="../ADM/css/styleTela5.css"');
+            break;
+    }
+} elseif ($nivel == 2) {
 
     $menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
     switch ($menuop) {
 
         case 'home':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Tutor/css/styleTela1.css"');
             break;
-        case 'create':
-            $css = ('href="../../public/css/styleTela1.css"');
+        // case 'create':
+        //     $css = ('href="../Tutor/css/styleTela5.css"');
+        //     break;
+        case 'horario':
+            $css = ('href="../Tutor/css/styleTela2.css"');
             break;
         case 'agendamento':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Tutor/css/styleTela3.css"');
             break;
         case 'noticias':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Tutor/css/styleTela4.css"');
             break;
-            
-    }} else {
+    }
+} else {
 
     $menuop = (isset($_GET["menuop"])) ? $_GET["menuop"] : "home";
     switch ($menuop) {
 
         case 'home':
-            $css = ('href="../../public/css/styleTela1.css"');
-            break;
-        case 'agendamento':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Discente/css/styleTela1.css"');
             break;
         case 'horario':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Discente/css/styleTela2.css"');
+            break;
+        case 'agendamento':
+            $css = ('href="../Discente/css/styleTela3.css"');
             break;
         case 'noticias':
-            $css = ('href="../../public/css/styleTela1.css"');
+            $css = ('href="../Discente/css/styleTela4.css"');
             break;
     }
 }
-?>

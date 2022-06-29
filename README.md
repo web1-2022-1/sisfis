@@ -1,20 +1,23 @@
 # Projeto-Web-I
 Projeto desenvolvido para matéria de  Laboratório de Programação Web I
 --
-estarenos usando PHP com mysql e modelo MVC
+estaremos usando PHP com mysql e modelo MVC
+
 <img src="https://www.educabras.com/media/faculdades/image/ifbaiano.png">
-<img src="https://www.ifbaiano.edu.br/unidades/bonfim/files/2011/05/Academia.png">
+
+![Captura de tela de 2022-06-03 09-30-09](https://user-images.githubusercontent.com/71037296/174153795-ad59b4fe-f0f2-4dc8-bb83-103e55d48259.png)
+
 
 ## SysGymIf
 ### Sistema para gerenciar alunos na academia do IFBaiano
 ### Sobre o projeto <h3> 
-O sistema em questão trata-se de um sistema web para o gerenciamento de alunos do IFBaiano para usarem a academia da instituição como requisito fundamental para a disciplina de Laboratório de
-Programação Web I feito no semestre de 2021.2 no Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Guanambi.
+O sistema web desenvolvido tem como objetivo realizar o gerenciamento de alunos do IFbaiano no uso da academia da instituição. O trabalho consta como requisito fundamental para a disciplina de Laboratório de Programação Web I, realizado durante o semestre de 2021.2 no Instituto Federal de Educação, Ciência e Tecnologia Baiano - Campus Guanambi.
 
 ### Ferramentas utilizadas <h3>
+
  * [Astah UML](https://astah.net/downloads/): É um software de modelagem que permite uma fácil visualização dos componentes do sistema e de como eles se interagem através de diagramas.
  * [Figma](https://www.figma.com): É uma ferramente online com o propósito de modelar os layouts do sistema, dando uma noção mais clara de como será o desenvolvimento das interfaces do sistema.
-* [MySQL Workbench](https://www.mysql.com/products/workbench/): É um sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados, também é uma ferramenta capaz de modelar o diagrama do banco de dados do sistema para facilitar a visualização e entendimento.
+* [PostgreSQL](https://www.postgresql.org/): É um sistema gerenciador de banco de dados que possui o propósito de realizar o armazenamento e a manutenção dos dados.
 * [Sublime Text](https://www.sublimetext.com): É um software multiplataforma para edição de código-fonte, podendo ser usada para desenvolvimento para diversos códigos, inclusive para desenvolvimento web.
 * [Trello](https://trello.com/): É uma ferramenta de desenvolvimento de projetos trazendo para os integrantes do projeto uma facilidade em acompanhar cada etapa das atividades a serem feitas.
 
@@ -29,13 +32,7 @@ Programação Web I feito no semestre de 2021.2 no Instituto Federal de Educaç�
 Funcionalidade | Status
 ------------ | -------------
 Gerenciamento de clientes | Funcionando
-Gerenciamento de funcionários | Funcionando
-Gerenciamento de fornecedores | Funcionando
-Gerenciamento de produtos | Funcionando
-Gerenciamento de compras | Funcionando
-Gerenciamento de vendas | Funcionando
 Gerenciamento de devoluções | Funcionando
-Fluxo de caixa | Funcionando
 Configurações | Funcionando
 Login/Logout | Funcionando.
 
@@ -89,18 +86,30 @@ Login/Logout | Funcionando.
         </td>
     </tr>
 </table>
-
-### Link do sistema <h3>
-Acesse: https://introblack.000webhostapp.com/IFHelth/
     
-Dados de login:
+---
+
+## Documentação 
+- [Relatório de correções]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
+- [Testes e Bugs]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
+- [Manual de Instação]([Document/teste-e-debang.md](https://github.com/web1-2022-1/sisfis/blob/main/Document/testes-e-debang.md))
+    
+### Link do sistema <h3>
+
+Acesse: https://sisfis.herokuapp.com/
+    
+Dados de login de administrador:
 
 * Usuario: admin
-* Senha: 2222
-
-* Usuario: icaro-tutor
+* Senha: ifbaiano
+    
+    
+Dados de login de tutor:
+    
+* Usuario: tutor
 * Senha: ifbaiano
 
+    
+Dados de login de discente:
 * Usuario: discente
-* Senha: discente
-
+* Senha: ifbaiano

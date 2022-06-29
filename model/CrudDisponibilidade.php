@@ -5,11 +5,11 @@ require_once('DB/conexao.php');
 abstract class CrudDisponibilidade extends DB{
 
     protected $tabela;
-    public $idDisponibilidade;
-    public $idTutor;
+    public $idDisponibilidade = '"idDisponibilidade"';
+    public $idTutor = '"fkTutor"';
     public $dia;
-    public $horaInicial;
-    public $horaFinal;
+    public $horaInicial = '"horaInicial"';
+    public $horaFinal = '"horaFinal"';
     public $livre;
 
     public function setIdTutor($idTutor) {

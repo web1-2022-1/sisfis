@@ -1,13 +1,13 @@
 <?php
 
-require_once("../../model/CrudAgendamento.php");
+require_once(__DIR__."/../../model/CrudAgendamento.php");
 
 class Agendamento extends CrudAgendamento{
     protected $tabela = 'agendamento';
    
     //busca 1 item
     public function findUnit($id) {
-        $sql = "SELECT * FROM $this->tabela WHERE idagendamento = :id";
+        $sql = "SELECT * FROM $this->tabela WHERE $this->idAgendamento = :id";
         $stm = DB::prepare($sql);
         $stm->bindParam(':id', $id, PDO::PARAM_INT);
         $stm->execute();
@@ -23,21 +23,58 @@ class Agendamento extends CrudAgendamento{
     
     //busca senha
     public function findkey() {
-        $sql = "SELECT fkDisponibilidade FROM $this->tabela WHERE fkDiscente = :fkDiscente LIMIT 1";
+        $fkDd = '"fkDisponibilidade"';
+        $fkDt = '"fkDiscente"';
+        $sql = "SELECT $fkDd FROM $this->tabela WHERE $fkDt = :fkDiscente GROUP BY $fkDd";
         $stm = DB::prepare($sql);
         $stm->bindParam(':fkDiscente', $this->fkDiscente);
         $stm->execute();
-        return $stm->fetch();
+        return $stm->fetchall();
     }
     
      //faz insert   
     public function insert() {
-        $sql = "INSERT INTO $this->tabela (fkTutor, fkDiscente, fkDisponibilidade) VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+        
+        $discente =  '"fkDiscente"';
+        $idAgendamento = '"idAgendamento"';
+        $fkDisponibilidade = '"fkDisponibilidade"';
+
+        $sql = "SELECT COUNT($idAgendamento) FROM $this->tabela 
+        WHERE $fkDisponibilidade = :fkDisponibilidade 
+        AND  $discente = $this->fkDiscente";
+
         $stm = DB::prepare($sql);
-        $stm->bindParam(':fkTutor', $this->fkTutor);
-        $stm->bindParam(':fkDiscente', $this->fkDiscente);
         $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
-        return $stm->execute();
+        // $stm->execute();$stm->rowCount() > 0
+
+        if (1 == 0 ) {
+
+            return false;
+
+        }else{
+
+            $tutor =  '"fkTutor"';
+            $disponibilidade =  '"fkDisponibilidade"';
+            $sqlVerificador = "SELECT * FROM $this->tabela
+            WHERE $discente = $this->fkDiscente AND $disponibilidade = $this->fkDisponibilidade";
+            
+            $stm = DB::prepare($sqlVerificador);
+            $stm->execute();
+            
+            if ($stm->rowCount() > 0 ) {
+
+                return false;
+
+            }else{
+                $sql = "INSERT INTO $this->tabela ($tutor, $discente, $disponibilidade) 
+                VALUES (:fkTutor, :fkDiscente, :fkDisponibilidade)";
+                $stm = DB::prepare($sql);
+                $stm->bindParam(':fkTutor', $this->fkTutor);
+                $stm->bindParam(':fkDiscente', $this->fkDiscente);
+                $stm->bindParam(':fkDisponibilidade', $this->fkDisponibilidade);
+                return $stm->execute();
+            }
+        }
     }
     
     //update de itens
@@ -69,7 +106,7 @@ class Agendamento extends CrudAgendamento{
 
         if ($sql->rowCount() > 0 ) {
             $dado = $sql->fetch();
-            $_SESSION['idagendamento']=$dado['idagendamento'];
+            $_SESSION['idAgendamento']=$dado['idAgendamento'];
             return true;   
         }else{
             return false;
@@ -81,7 +118,7 @@ class Agendamento extends CrudAgendamento{
 
         $array = array();
 
-        $sql = "SELECT nivel FROM agendamento WHERE idagendamento = :idagendamento";
+        $sql = "SELECT nivel FROM agendamento WHERE  $this->idAgendamento = :idagendamento";
         $sql = $pdo->prepare($sql);
         $sql->bindValue("idagendamento",$id);
         $sql->execute();
