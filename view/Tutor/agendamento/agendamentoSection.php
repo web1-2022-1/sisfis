@@ -15,13 +15,13 @@
         
         if ($on) {?>
         <form action="" method="POST">
-        <input type="submit" name="on-off" value="false">
+        <input type="submit" name="on-off" value="Desbloqueado">
         <?php
 
         }else{ ?>
 
         <form action="" method="POST">
-        <input type="submit" name="on-off" value="true">
+        <input type="submit" name="on-off" value="Bloqueado">
         <?php 
         }
         ?>
