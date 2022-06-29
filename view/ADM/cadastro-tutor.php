@@ -77,7 +77,7 @@ require_once('../../app/controller/Bloqueio.php');
 			
 			$disponibilidade->insert();
 
-			$bloqueio->idTutor = $_SESSION['idUsuario'];
+			$bloqueio->idTutor = $id;
 			$bloqueio->idDiscente = $id;
 			}
 			if ($bloqueio->insert()) {?>
