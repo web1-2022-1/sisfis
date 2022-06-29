@@ -5,7 +5,7 @@ ferramenta de manipulaçao do banco, por exemplo o HeidiSQL, MySQL Workbench ou 
 
 Tendo as ferramentas, será necessário rodar o script das tabelas SQL no banco, e em seguida inserir o admin com a senha de sua preferência.
 
-Acione o apache enviando a aplicação para a pasta htdochtml (via Xampp np Windows) ou www (via terminal no Linux).
+Acione o apache enviando a aplicação para a pasta htdochtml (via Xampp no Windows) ou www (via terminal no Linux).
 
 Acesse o código do sistema e no caminho .../model/bd mude o usuário, a senha e o banco no arquivo variáveis. Com as variáveis configuradas, basta rodar a aplicação no 
 localhost.
@@ -96,5 +96,62 @@ rm index.html
 
 ## Instalando e configurando o PHP 8.0 no Linux
 
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install php
+- Abra o terminal pressionando as teclas ```Ctrl``` + ```Alt``` + ```t```;
+- Digite os comandos a seguir para fazer a instalação da versão específica do php 8.0;
+```
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt install php8.0
+```
+
+## Instalando e configurando o PHP 8.0 no Windows
+
+- Acesse o link https://php.net/downloads.php;
+- Clique na área "Windows downloads" dentro do campo referente à versão 8.0;
+![Captura de tela de 2022-06-29 13-44-22](https://user-images.githubusercontent.com/91372093/176529797-3e259093-39c9-4246-bdff-b26abcbeeba8.jpg)
+- Escolha  plataforma do PHP Non Thread Safe(NTS) em relação ao seu computador, x86 ou x64;
+- Mova o arquivo .zip da pasta "Download" para a paratição principal do seu computador (normalmente C:) e descompacte o arquivo;
+- Renomeie a pasta para simplesmente php;
+- Volte à página onde baixou o arquivo e faça o download do arquivo "VC" de acordo com o seu computador, x86 ou x64;
+- Dentro da pasta descompactada no C:, renomeie o arquivo "php.ini-development" para somente "php.ini.";
+- Abra o Painel de Controle;
+- Vá em Sistema;
+- Selecione a guia Avançado;
+- Clique em Variáveis de ambiente no rodapé da janela;
+- Na seção Variáveis do sistema, selecione Path;
+- Clique em Editar;
+- Em Valor da variável, vá até o final do campo de texto;
+- Acrescente um ";" (ponto e vírgula) para finalizar os caminhos anteriores;
+- Coloque "c:\php", então, ficará assim: ….;c:\php;
+- Abra o menu iniciar;
+- Selecione seu editor de texto com o botão direito do mouse;
+- Clique em "Executar como administrador";
+- Siga o caminho "C:\Windows\System32\drivers\etc";
+- Abra o arquivo "hosts", se ele não aparecer, selecione "Todos os arquivos" para ele ser mostrado na janela;
+- Verifique se existe a linha 127.0.0.1 localhost, se existir está pronto, senão acrescente-a ao final do arquivo, salve e feche o programa;
+- Reinicie sua máquina;
+- Digite ```prompt de comando``` ou ```cmd``` no menu de busca do windows;
+- Digite:
+```
+php --version
+php -S localhost:8080
+```
+
+
+## Instalando e configurando o PostgreSQL no Linux
+
+- Abra o terminal pressionando as teclas ```Ctrl``` + ```Alt``` + ```t```;
+- Digite os seguintes comandos:
+```
+apt-get install postgresql
+# service postgresql initdb
+# service postgresql start
+# chkconfig postgresql on
+```
+- Atribua uma senha no usuário postgres do PostgreqSQL;
+```
+su postgres -c psql
+ALTER USER postgres WITH PASSWORD 'senha';
+\q
+```
