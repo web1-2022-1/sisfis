@@ -55,7 +55,6 @@ require_once('../../app/controller/Bloqueio.php');
 		$usuario->setSenha(md5($senha));
 		$usuario->setNivel(2);
 		$id = $usuario->insert();
-		var_dump($id);
 		if ($id != null) {
 			
 			$contArray = array();
