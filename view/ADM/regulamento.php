@@ -77,10 +77,10 @@ require_once('../../app/controller/Regulamento.php');
 			<div class="regulamento">
 				<h1>Regulamentos</h1>
 				<form action="" method="POST" >
-				<table border="2px">
+				<table>
 					<thead>
 						<tr>
-							<th>Nome</th>
+							<th>Descrição</th>
 							<th>Editar</th>
 							<th>Excluir</th>
 						</tr>
@@ -90,12 +90,12 @@ require_once('../../app/controller/Regulamento.php');
 				foreach ($regulamentos as $key => $value) { ?>
 					<tbody>
 						<tr>
-							<td><?php echo "<h3>" . $value->descricao; ?>
+							<td><?php echo "<br><h3>" . $value->descricao; ?>
 							
 							<input type="hidden" name="idRegulamento" value="<?php echo $value->idRegulamento; ?>">
 							
-							<td><button><a href="">Editar</a></button></td>
-							<td><button name="Remover">Excluit</button></td></td>
+							<td><button><a href=""><br>Editar</a></button></td>
+							<td><button name="Remover"><br>Excluit</button></td></td>
 						</tr>
 					</tbody>
 				<?php

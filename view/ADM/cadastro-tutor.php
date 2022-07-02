@@ -233,7 +233,7 @@ require_once('../../app/controller/Bloqueio.php');
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula" min="2" minlength="5" maxlength="12" required></textarea>
+							<textarea name="matricula" min="2" minlength="5" maxlength="16" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
