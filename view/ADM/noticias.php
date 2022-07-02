@@ -83,7 +83,7 @@ require_once('../../app/controller/Noticia.php');
 	<section>
 		<div class="container">
 			<div class="notas">
-				<table border="2px">
+				<table>
 					<thead>
 						<tr>
 							<th><h1>Notícias</h1></th>
