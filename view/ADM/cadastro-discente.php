@@ -105,19 +105,19 @@ require_once(__DIR__.'/../../app/controller/Bloqueio.php');
 					<div class="add-tutor-cadast">
 						<div class="cap1">
 							<p>Nome:</p>
-							<textarea name="nome"  required></textarea>
+							<textarea name="nome" min="2" minlength="5" maxlength="42" required></textarea>
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula" required></textarea>
+							<textarea name="matricula"  min="2" minlength="5" maxlength="16" required></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login" required></textarea>
+							<textarea name="login"  min="2" minlength="5" maxlength="12" required></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha" required></textarea>
+							<textarea type="password" name="senha" minlength="8" maxlength="12" required></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->
