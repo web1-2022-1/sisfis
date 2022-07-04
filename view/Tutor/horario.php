@@ -36,7 +36,7 @@ if (isset($_GET['idAgendar'])) {
 		$disponibilidade->idDisponibilidade = $idAgendar;
 		if ($disponibilidade->delete()) { ?>
 				
-			<div class="modal">
+			<div class="modal-agendamento">
 				<form action="" method="POST">
 					<img src="../../public/img/sucess.gif" alt="" srcset="">
 					<input type="submit" value="fecha">
@@ -46,7 +46,7 @@ if (isset($_GET['idAgendar'])) {
 			<?php		
 			} else {?>
 		
-		<div class="modal-falha">
+		<div class="modal-falha-agendamento">
 			<form action="" method="POST">
 				<img src="../../public/img/falha.gif" alt="" srcset="">
 				<input type="submit" value="fecha">
