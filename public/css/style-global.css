@@ -37,11 +37,16 @@
 
 }
 
+.modal-falha img{
+	width: 210px;
+}
+
+
 .modal-falha {
 	cursor: pointer;
 	width: 500px;
 	border-radius: 10px;
-    left: 30rem;
+    left: 32rem;
     z-index: 4;
 	position: absolute;
 	bottom: 125px;
