@@ -20,6 +20,7 @@
 define('HOST','200.128.100.19');
 define('USER','aluno');
 define('PASS','aluno2021');
+define('PORT','15432');
 define('BASE','tabd');
 
 
