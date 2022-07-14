@@ -25,12 +25,18 @@
 
 // ------------ Banco Para Hospedar no Pgsql SisFis --------------
 
-define('HOST','200.128.100.19');
+// define('HOST','200.128.100.19');
+// define('USER','sisfis');
+// define('PASS','sisfis2022');
+// define('PORT','15432');
+// define('BASE','sisfis');
+
+
+define('HOST','pgsql');
 define('USER','sisfis');
 define('PASS','sisfis2022');
-define('PORT','15432');
+define('PORT','5432');
 define('BASE','sisfis');
-
 
 // ------------ Banco Para Hospedar no Pgsql --------------
 
