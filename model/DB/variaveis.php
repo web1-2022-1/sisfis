@@ -32,7 +32,7 @@
 // define('BASE','sisfis');
 
 
-define('HOST','pgsql');
+define('HOST','postgres');
 define('USER','sisfis');
 define('PASS','sisfis2022');
 define('PORT','5432');
