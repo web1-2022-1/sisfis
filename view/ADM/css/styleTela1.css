@@ -57,7 +57,7 @@ footer *.container {
 .cabecariopt2 {
 	display: flex;
 	flex-direction: column;
-	background-color: #0A5517;
+	background-color: #01420B;
 	width: 100%;
 
 }
@@ -395,13 +395,4 @@ footer .segundoRodaPe .img-footer2 {
 
 	}
 
-}
-
-
-/* Para Hospedar */
-
-
-.disclaimer {
-
-	display: none;
 }
