@@ -154,6 +154,7 @@ require_once('../../app/controller/Bloqueio.php');
 		isset($_POST['Adicionar'])) {
 
 		$nome = $_POST['nome'];
+		$matricula = $_POST['matricula'];
 		$senha = $_POST['senha'];
 		$login = $_POST['login'];
 
@@ -175,15 +176,15 @@ require_once('../../app/controller/Bloqueio.php');
 						</div>
 						<div class="cap2">
 							<p>Matricula:</p>
-							<textarea name="matricula" required><?php echo $nome; ?></textarea>
+							<textarea name="matricula" required><?php echo $matricula; ?></textarea>
 						</div>
 						<div class="cap3">
 							<p>Digite o Login:</p>
-							<textarea name="login" required><?php echo $nome; ?></textarea>
+							<textarea name="login" required><?php echo $login; ?></textarea>
 						</div>
 						<div class="cap4">
 							<p>Digite a senha:</p>
-							<textarea name="senha" required><?php echo $nome; ?></textarea>
+							<textarea name="senha" required><?php echo $senha; ?></textarea>
 						</div>
 					</div>
 					<!--add-tutor-cadast-->
